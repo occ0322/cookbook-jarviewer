@@ -16,6 +16,7 @@
 package com.davidsalter.cookbook.jarviewer;
 
 import com.davidsalter.cookbook.jarviewer.gui.MainFrame;
+import java.util.logging.Logger;
 
 /**
  *
@@ -27,11 +28,12 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        LOG.info("Starting application: "+args.length+" arguments.");
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainFrame().setVisible(true);
             }
         });
     }
-
+    private static final Logger LOG = Logger.getLogger(Main.class.getName());
 }
